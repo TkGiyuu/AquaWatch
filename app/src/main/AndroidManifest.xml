@@ -12,17 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AquaWatch">
 
-        <!-- LOGIN SCREEN (Launcher) -->
+        <!-- WELCOME SCREEN (Launcher) -->
         <activity
-            android:name=".login.LoginActivity"
+            android:name=".welcome.WelcomeActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+
+        <!-- LOGIN SCREEN -->
+        <activity
+            android:name=".login.LoginActivity"
+            android:exported="false" />
 
         <!-- REGISTER SCREEN -->
         <activity
@@ -32,6 +35,14 @@
         <!-- HOME SCREEN -->
         <activity
             android:name=".home.HomeActivity"
+            android:exported="false" />
+        <!-- ALERTS SCREEN -->
+        <activity
+            android:name=".alerts.AlertsActivity"
+            android:exported="false" />
+        <!-- PROFILE SCREEN -->
+        <activity
+            android:name=".profile.ProfileActivity"
             android:exported="false" />
         <meta-data
             android:name="preloaded_fonts"

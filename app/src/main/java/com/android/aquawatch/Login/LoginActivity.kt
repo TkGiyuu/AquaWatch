@@ -2,6 +2,7 @@ package com.android.aquawatch.login
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -20,6 +21,9 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Login"
 
         presenter = LoginPresenter(this)
 
@@ -43,6 +47,16 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         }
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
     override fun showEmailError() {
         etEmail.error = "Email required"
     }
@@ -60,5 +74,5 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         finish()
     }
 
-    
+
 }
