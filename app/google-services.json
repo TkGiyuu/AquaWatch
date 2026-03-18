@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "218235140527",
+    "firebase_url": "https://esp32-android-project-423ca-default-rtdb.firebaseio.com",
+    "project_id": "esp32-android-project-423ca",
+    "storage_bucket": "esp32-android-project-423ca.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218235140527:android:c90c1d43ab2e7a2343d75a",
+        "android_client_info": {
+          "package_name": "com.android.aquawatch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6Wp7gmFAHbpVPhbf6eq4lLkerQVu22Zg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
