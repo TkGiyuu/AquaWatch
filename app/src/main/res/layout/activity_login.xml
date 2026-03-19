@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1F8FB3"
+    android:background="#1C0770"
     android:fillViewport="true">
 
     <LinearLayout
@@ -19,10 +19,10 @@
             android:layout_marginBottom="32dp">
 
             <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@mipmap/ic_launcher_round"
-                android:layout_marginEnd="8dp" />
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/aquawatch" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -37,47 +37,52 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/rounded_card">
+            android:background="@drawable/rounded_card"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Login"
+                android:layout_marginBottom="16dp"
                 android:fontFamily="@font/poppins_medium"
+                android:text="Login"
                 android:textColor="#1F8FB3"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="16dp" />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/etUsername"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:hint="Username"
-                android:fontFamily="@font/poppins_medium"
+                android:layout_marginBottom="12dp"
                 android:background="@drawable/rounded_input"
-                android:padding="12dp"
-                android:layout_marginBottom="12dp" />
+                android:fontFamily="@font/poppins_medium"
+                android:hint="Username"
+                android:textColorHint="#7AAACE"
+                android:textColor="@color/black"
+                android:padding="12dp" />
 
             <EditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:hint="Password"
-                android:fontFamily="@font/poppins_medium"
-                android:inputType="textPassword"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/rounded_input"
-                android:padding="12dp"
-                android:layout_marginBottom="20dp" />
+                android:fontFamily="@font/poppins_medium"
+                android:hint="Password"
+                android:textColorHint="#7AAACE"
+                android:textColor="@color/black"
+                android:inputType="textPassword"
+                android:padding="12dp" />
 
             <Button
                 android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login"
-                android:fontFamily="@font/poppins_medium"
+                android:background="@drawable/rounded_input"
                 android:backgroundTint="#1F8FB3"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Login"
                 android:textColor="@color/white" />
         </LinearLayout>
 
@@ -85,7 +90,7 @@
             android:id="@+id/tvRegisterHint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="If you don’t have an account, register here"
+            android:text="If you don’t have an account"
             android:textColor="@color/white"
             android:textSize="12sp"
             android:fontFamily="@font/poppins_medium"
@@ -96,11 +101,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Register"
-            android:background="@drawable/rounded_input"
             android:fontFamily="@font/poppins_medium"
             android:layout_marginTop="8dp"
-            android:backgroundTint="@color/white"
-            android:textColor="#1F8FB3" />
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

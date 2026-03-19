@@ -1,12 +1,14 @@
 package com.android.aquawatch.register
 
-import  android.os.Bundle
+import android.content.Intent
+import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.android.aquawatch.R
+import com.android.aquawatch.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -34,6 +36,12 @@ class RegisterActivity : AppCompatActivity() {
         etEmail = findViewById(R.id.etRegUsername)
         etPassword = findViewById(R.id.etRegPassword)
         btnRegister = findViewById(R.id.btnRegister)
+
+        val btnGoLogin = findViewById<Button>(R.id.btnGoLogin)
+        btnGoLogin.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
 
         btnRegister.setOnClickListener {
 
