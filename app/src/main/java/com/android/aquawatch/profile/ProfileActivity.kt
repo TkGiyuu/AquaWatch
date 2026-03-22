@@ -1,6 +1,7 @@
 package com.android.aquawatch.profile
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
@@ -8,6 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.android.aquawatch.R
+import com.android.aquawatch.welcome.WelcomeActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
@@ -124,7 +126,11 @@ class ProfileActivity : AppCompatActivity() {
     private fun performLogout() {
         FirebaseAuth.getInstance().signOut()
         Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show()
-        finishAffinity()
+        val intent = Intent(this, WelcomeActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        }
+        startActivity(intent)
+        finish()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
