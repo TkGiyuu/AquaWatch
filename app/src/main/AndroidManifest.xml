@@ -38,7 +38,7 @@
             android:exported="false" />
         <!-- ALERTS SCREEN -->
         <activity
-            android:name=".alerts.AlertsActivity"
+            android:name=".Alerts.AlertsActivity"
             android:exported="false" />
         <!-- PROFILE SCREEN -->
         <activity

@@ -7,6 +7,6 @@ interface HomeContract {
     }
 
     interface Presenter {
-        fun simulateWater()
+        fun startListening()
     }
 }

@@ -15,8 +15,11 @@ import com.google.firebase.database.FirebaseDatabase
 
 class RegisterActivity : AppCompatActivity() {
 
+    private lateinit var etName: EditText
+    private lateinit var etUsername: EditText
     private lateinit var etEmail: EditText
     private lateinit var etPassword: EditText
+    private lateinit var etConfirmPassword: EditText
     private lateinit var btnRegister: Button
     private lateinit var auth: FirebaseAuth
     private lateinit var database: DatabaseReference
@@ -33,8 +36,11 @@ class RegisterActivity : AppCompatActivity() {
             .getInstance("https://esp32-android-project-423ca-default-rtdb.firebaseio.com/")
             .reference
 
-        etEmail = findViewById(R.id.etRegUsername)
+        etName = findViewById(R.id.etRegName)
+        etUsername = findViewById(R.id.etRegUsername)
+        etEmail = findViewById(R.id.etRegEmail)
         etPassword = findViewById(R.id.etRegPassword)
+        etConfirmPassword = findViewById(R.id.etConfirmPassword)
         btnRegister = findViewById(R.id.btnRegister)
 
         val btnGoLogin = findViewById<Button>(R.id.btnGoLogin)
@@ -45,8 +51,21 @@ class RegisterActivity : AppCompatActivity() {
 
         btnRegister.setOnClickListener {
 
-            val email = etEmail.text.toString()
+            val name = etName.text.toString().trim()
+            val username = etUsername.text.toString().trim()
+            val email = etEmail.text.toString().trim()
             val password = etPassword.text.toString()
+            val confirmPassword = etConfirmPassword.text.toString()
+
+            if (name.isEmpty()) {
+                etName.error = "Name required"
+                return@setOnClickListener
+            }
+
+            if (username.isEmpty()) {
+                etUsername.error = "Username required"
+                return@setOnClickListener
+            }
 
             if (email.isEmpty()) {
                 etEmail.error = "Email required"
@@ -55,6 +74,11 @@ class RegisterActivity : AppCompatActivity() {
 
             if (password.length < 6) {
                 etPassword.error = "Password must be at least 6 characters"
+                return@setOnClickListener
+            }
+
+            if (password != confirmPassword) {
+                etConfirmPassword.error = "Passwords do not match"
                 return@setOnClickListener
             }
 
@@ -72,8 +96,9 @@ class RegisterActivity : AppCompatActivity() {
                     }
 
                     val userNode = mapOf(
-                        "email" to email.trim(),
-                        "name" to email.substringBefore("@").replaceFirstChar { it.uppercaseChar() }
+                        "name" to name,
+                        "username" to username,
+                        "email" to email
                     )
 
                     database.child("users")

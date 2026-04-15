@@ -14,7 +14,7 @@ import com.android.aquawatch.register.RegisterActivity
 class LoginActivity : AppCompatActivity(), LoginContract.View {
 
     private lateinit var presenter: LoginPresenter
-    private lateinit var etEmail: EditText
+    private lateinit var etUsername: EditText
     private lateinit var etPassword: EditText
     private lateinit var btnLogin: Button
 
@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
 
         presenter = LoginPresenter(this)
 
-        etEmail = findViewById(R.id.etUsername)
+        etUsername = findViewById(R.id.etUsername)
         etPassword = findViewById(R.id.etPassword)
         btnLogin = findViewById(R.id.btnLogin)
 
@@ -41,7 +41,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
 
         btnLogin.setOnClickListener {
             presenter.login(
-                etEmail.text.toString(),
+                etUsername.text.toString(),
                 etPassword.text.toString()
             )
         }
@@ -57,8 +57,8 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         }
     }
 
-    override fun showEmailError() {
-        etEmail.error = "Email required"
+    override fun showUsernameError() {
+        etUsername.error = "Username required"
     }
 
     override fun showPasswordError() {

@@ -7,7 +7,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.android.aquawatch.R
-import com.android.aquawatch.alerts.AlertsActivity
+import com.android.aquawatch.Alerts.AlertsActivity
 import com.android.aquawatch.profile.ProfileActivity
 
 class HomeActivity : AppCompatActivity(), HomeContract.View {
@@ -31,9 +31,13 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         btnProfile = findViewById(R.id.btnProfile)
         btnAlerts = findViewById(R.id.btnAlerts)
 
+        // The hardware now provides live data, so the simulate button is no longer needed.
         btnSimulate.setOnClickListener {
-            presenter.simulateWater()
+            android.widget.Toast.makeText(this, "Receiving live hardware data!", android.widget.Toast.LENGTH_SHORT).show()
         }
+
+        // Connect to Firebase for real-time ESP32 data right away
+        presenter.startListening()
 
         btnProfile.setOnClickListener {
             startActivity(Intent(this, ProfileActivity::class.java))

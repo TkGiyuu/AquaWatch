@@ -3,13 +3,13 @@ package com.android.aquawatch.login
 interface LoginContract {
 
     interface View {
-        fun showEmailError()
+        fun showUsernameError()
         fun showPasswordError()
         fun showLoginFailed(message: String)
         fun navigateToHome()
     }
 
     interface Presenter {
-        fun login(email: String, password: String)
+        fun login(username: String, password: String)
     }
 }

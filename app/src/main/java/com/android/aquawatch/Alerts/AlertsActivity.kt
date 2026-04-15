@@ -1,4 +1,4 @@
-package com.android.aquawatch.alerts
+package com.android.aquawatch.Alerts
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
