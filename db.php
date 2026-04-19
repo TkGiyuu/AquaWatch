@@ -23,7 +23,7 @@ function db(): PDO {
                 ]
             );
         } catch (PDOException $e) {
-            // Show a clean error instead of stack trace
+           
             http_response_code(500);
             die('<div style="font-family:sans-serif;padding:40px;color:#dc2626">
                 <h2>Database Error</h2>
